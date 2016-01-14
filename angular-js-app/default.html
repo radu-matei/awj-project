@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products API</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+     <ul id="productsList"></ul>
+
+
+    <script type="text/javascript">
+        $.ajax({
+            url: 'http://localhost:8080/products',
+            method: 'GET',
+            dataType: 'json',
+            success: populateProductList
+        });
+		
+        function populateProductList(products) {
+            $.each(products, function (index) {
+                var product = products[index];
+                $("#productsList").append('<li id=product'+ product.id +'>' + product.name + '</li>');
+            });
+        }
+    </script>
+</body>
+</html>
