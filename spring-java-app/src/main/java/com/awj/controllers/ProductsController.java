@@ -10,6 +10,7 @@ import java.util.List;
  * Created by Radu on 14/01/16.
  */
 @RestController
+@CrossOrigin
 public class ProductsController {
 
     private Repository<Product> productsRepository = new Repository<>();

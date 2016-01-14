@@ -2,10 +2,7 @@ package com.awj.controllers;
 
 import com.awj.dal.Repository;
 import com.awj.models.Person;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ import java.util.List;
  * Created by Radu on 14/01/16.
  */
 @RestController
+@CrossOrigin
 public class PersonsController {
     private Repository<Person> personRepository;
 
