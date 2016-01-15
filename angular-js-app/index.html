@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="blog">
+<html ng-app="angular-app">
 <head>
   <title>AWJ</title>
   <link rel="stylesheet" media="all" href="css/bootstrap.min.css">
@@ -32,12 +32,12 @@
   <hr/>
 
   <div class="container">
+      
     <div ng-controller="HomeController">
       <h1>{{ title }}</h1>
       <h3>{{ subtitle }}</h3>
     </div>
   </div>
-
   <hr/>
 
   <!-- /resources1 -->
@@ -52,7 +52,7 @@
         <th>Stock</th>
         <th style="width:210px;">Options</th>
       </tr>
-      <tr ng-repeat="product in products">
+      <tr ng-attr-id="{{ 'product' + product.id }}" ng-repeat="product in products">
         <td>{{ product.name }}</td>
         <td>{{ product.category }}</td>
         <td>{{ product.price }}</td>
@@ -71,7 +71,7 @@
             </span>
           </a>
           <a href="">
-            <span class="label label-danger">
+            <span class="label label-danger" ng-click="removeProduct(product.id)">
               Remove
               <span class="glyphicon glyphicon-remove"></span>
             </span>
@@ -82,49 +82,57 @@
 
     <div class="row">
       <div class="col-md-3">
-        <h2>Edit a resource1</h2>
+        <h2>Edit Product</h2>
         <form action="" method="">
           <div class="form-group">
-            <label for="attribute1">Attribute 1</label>
-            <input type="text" class="form-control" id="attribute1" placeholder="Attribute 1">
+            <label for="id">Id</label>
+            <input ng-model="id" type="text" class="form-control" id="attribute1" placeholder="Id">
           </div>
           <div class="form-group">
-            <label for="attribute2">Attribute 2</label>
-            <input type="text" class="form-control" id="attribute2" placeholder="Attribute 2">
+            <label for="attribute2">Name</label>
+            <input ng-model="name" type="text" class="form-control" id="attribute2" placeholder="Name">
           </div>
           <div class="form-group">
-            <label for="attribute3">Attribute 3</label>
-            <input type="text" class="form-control" id="attribute3" placeholder="Attribute 3">
+            <label for="attribute3">Category</label>
+            <input ng-model="category" type="text" class="form-control" id="attribute3" placeholder="Category">
           </div>
           <div class="form-group">
-            <label for="attribute4">Attribute 4</label>
-            <input type="text" class="form-control" id="attribute4" placeholder="Attribute 4">
+            <label for="attribute4">Stock</label>
+            <input ng-model="stock" type="text" class="form-control" id="attribute4" placeholder="Stock">
           </div>
-          <button type="submit" class="btn btn-info">Save</button>
+          <div class="form-group">
+            <label for="attribute4">Price</label>
+            <input ng-model="price" type="text" class="form-control" id="attribute4" placeholder="Price">
+          </div>
+          <button ng-click="addProduct()" type="submit" class="btn btn-success">Add</button>
         </form>
       </div>
 
 
-      <div class="col-md-3 col-md-offset-6">
-        <h2>Add a resource1</h2>
+      <div class="col-md-3 col-md-offset-5">
+        <h2>Add Product</h2>
         <form action="" method="">
           <div class="form-group">
-            <label for="attribute1">Attribute 1</label>
-            <input type="text" class="form-control" id="attribute1" placeholder="Attribute 1">
+            <label for="id">Id</label>
+            <input ng-model="id" type="text" class="form-control" id="attribute1" placeholder="Id">
           </div>
           <div class="form-group">
-            <label for="attribute2">Attribute 2</label>
-            <input type="text" class="form-control" id="attribute2" placeholder="Attribute 2">
+            <label for="attribute2">Name</label>
+            <input ng-model="name" type="text" class="form-control" id="attribute2" placeholder="Name">
           </div>
           <div class="form-group">
-            <label for="attribute3">Attribute 3</label>
-            <input type="text" class="form-control" id="attribute3" placeholder="Attribute 3">
+            <label for="attribute3">Category</label>
+            <input ng-model="category" type="text" class="form-control" id="attribute3" placeholder="Category">
           </div>
           <div class="form-group">
-            <label for="attribute4">Attribute 4</label>
-            <input type="text" class="form-control" id="attribute4" placeholder="Attribute 4">
+            <label for="attribute4">Stock</label>
+            <input ng-model="stock" type="text" class="form-control" id="attribute4" placeholder="Stock">
           </div>
-          <button type="submit" class="btn btn-success">Add</button>
+          <div class="form-group">
+            <label for="attribute4">Price</label>
+            <input ng-model="price" type="text" class="form-control" id="attribute4" placeholder="Price">
+          </div>
+          <button ng-click="addProduct()" type="submit" class="btn btn-success">Add</button>
         </form>
       </div>
     </div>
@@ -338,6 +346,7 @@
       <p class="text-muted pull-right">Sirbu Nicolae-Cezar, 331AA</p>
     </footer>
   </div>
+
 
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
