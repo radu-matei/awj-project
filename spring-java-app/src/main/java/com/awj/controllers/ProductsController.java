@@ -33,8 +33,8 @@ public class ProductsController {
         productsRepository.add(product);
     }
 
-    @RequestMapping(value = "products/delete", method = RequestMethod.DELETE)
-    public void deleteProduct(@RequestBody Integer id){
+    @RequestMapping(value = "products/delete/{id}", method = RequestMethod.DELETE)
+    public void deleteProduct(@PathVariable("id") Integer id){
         productsRepository.delete(id);
     }
 
