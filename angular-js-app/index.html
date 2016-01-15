@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="blog">
 <head>
-  <title>My application</title>
+  <title>AWJ</title>
   <link rel="stylesheet" media="all" href="css/bootstrap.min.css">
   <link rel="stylesheet" media="all" href="css/custom.css">
 </head>
@@ -21,8 +21,8 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#">Resource 1</a></li>
-            <li><a href="#">Resource 2</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Persons</a></li>
           </ul>
         </div>
       </div>
@@ -33,108 +33,30 @@
 
   <div class="container">
     <div ng-controller="HomeController">
-      <h1>{{ helloWorld }}</h1>
-      <p>Writing this live into the browser...</p>
+      <h1>{{ title }}</h1>
+      <h3>{{ subtitle }}</h3>
     </div>
   </div>
 
   <hr/>
 
   <!-- /resources1 -->
-  <div class="container">
-    <h1>Resource 1</h1>
-    <h2>List all resources</h2>
+  <div class="container" ng-controller="ProductsController">
+    <h1>Products</h1>
+    <h2>All products</h2>
     <table class="table table-bordered">
       <tr>
-        <th>Attribute 1</th>
-        <th>Attribute 2</th>
-        <th>Attribute 3</th>
-        <th>Attribute 4</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Stock</th>
         <th style="width:210px;">Options</th>
       </tr>
-      <tr>
-        <td>Lorem</td>
-        <td>Ipsum</td>
-        <td>Dolor</td>
-        <td>Sit</td>
-        <td>
-          <a href="">
-            <span class="label label-success">
-              Open
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-          </a>
-          <a href="">
-            <span class="label label-primary">
-              Edit
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-          </a>
-          <a href="">
-            <span class="label label-danger">
-              Remove
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Ipsum</td>
-        <td>Lorem</td>
-        <td>Sit</td>
-        <td>Dolor</td>
-        <td>
-          <a href="">
-            <span class="label label-success">
-              Open
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-          </a>
-          <a href="">
-            <span class="label label-primary">
-              Edit
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-          </a>
-          <a href="">
-            <span class="label label-danger">
-              Remove
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Sit</td>
-        <td>Lorem</td>
-        <td>Ipsum</td>
-        <td>Dolor</td>
-        <td>
-          <a href="">
-            <span class="label label-success">
-              Open
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-          </a>
-          <a href="">
-            <span class="label label-primary">
-              Edit
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-          </a>
-          <a href="">
-            <span class="label label-danger">
-              Remove
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Sit</td>
-        <td>Dolor</td>
-        <td>Lorem</td>
-        <td>Ipsum</td>
+      <tr ng-repeat="product in products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.stock }}</td>
         <td>
           <a href="">
             <span class="label label-success">
