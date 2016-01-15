@@ -42,4 +42,9 @@ public class ProductsController {
     public void updateProduct(@RequestBody Product product){
         productsRepository.update(product);
     }
+
+    @RequestMapping(value = "products/{id}", method = RequestMethod.GET)
+    public Product getById(@PathVariable("id") Integer id){
+        return productsRepository.getById(id);
+    }
 }
