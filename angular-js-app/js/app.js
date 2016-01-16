@@ -21,6 +21,8 @@ app.controller('ProductsController', ['$scope', '$http', function($scope, $http)
     $scope.updateStock;
     $scope.updatePrice;
     
+    $scope.detailedProduct;
+    
     $http.get("http://localhost:8080/products").then(function(response){
      $scope.products = response.data;
   });
@@ -63,5 +65,10 @@ app.controller('ProductsController', ['$scope', '$http', function($scope, $http)
         $scope.updateCategory = product.category;
         $scope.updateStock = product.stock;
         $scope.updatePrice = product.price;
-    }
+    };
+    
+    $scope.seeDetails = function(product){
+        $scope.detailedProduct = product;
+    };
+    
 }]);
