@@ -65,7 +65,7 @@
             </span>
           </a>
           <a href="">
-            <span class="label label-primary">
+            <span class="label label-primary" ng-click="getUpdateValues(product)">
               Edit
               <span class="glyphicon glyphicon-edit"></span>
             </span>
@@ -86,28 +86,27 @@
         <form action="" method="">
           <div class="form-group">
             <label for="id">Id</label>
-            <input ng-model="id" type="text" class="form-control" id="attribute1" placeholder="Id">
+            <input ng-model="updateId" type="text" class="form-control" id="attribute1" placeholder="Id">
           </div>
           <div class="form-group">
             <label for="attribute2">Name</label>
-            <input ng-model="name" type="text" class="form-control" id="attribute2" placeholder="Name">
+            <input ng-model="updateName" type="text" class="form-control" id="attribute2" placeholder="Name">
           </div>
           <div class="form-group">
             <label for="attribute3">Category</label>
-            <input ng-model="category" type="text" class="form-control" id="attribute3" placeholder="Category">
+            <input ng-model="updateCategory" type="text" class="form-control" id="attribute3" placeholder="Category">
           </div>
           <div class="form-group">
             <label for="attribute4">Stock</label>
-            <input ng-model="stock" type="text" class="form-control" id="attribute4" placeholder="Stock">
+            <input ng-model="updateStock" type="text" class="form-control" id="attribute4" placeholder="Stock">
           </div>
           <div class="form-group">
             <label for="attribute4">Price</label>
-            <input ng-model="price" type="text" class="form-control" id="attribute4" placeholder="Price">
+            <input ng-model="updatePrice" type="text" class="form-control" id="attribute4" placeholder="Price">
           </div>
-          <button ng-click="addProduct()" type="submit" class="btn btn-success">Add</button>
+          <button ng-click="updateProduct()" type="submit" class="btn btn-success">Add</button>
         </form>
       </div>
-
 
       <div class="col-md-3 col-md-offset-5">
         <h2>Add Product</h2>
